@@ -14,6 +14,6 @@ RUN pnpm install
 
 COPY . /app
 
-EXPOSE 3000
+# EXPOSE 3000
 
-CMD ["pnpm", "run", "start:prod"]
+# CMD ["pnpm", "run", "start:prod"]
