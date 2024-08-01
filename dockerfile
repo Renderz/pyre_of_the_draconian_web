@@ -13,7 +13,3 @@ COPY package.json pnpm-lock.yaml /app/
 RUN pnpm install
 
 COPY . /app
-
-# EXPOSE 3000
-
-# CMD ["pnpm", "run", "start:prod"]

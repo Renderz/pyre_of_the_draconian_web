@@ -5,18 +5,17 @@ services:
     build: .
     ports:
       - '3000:3000'
+    volumes:
+      - .:/app # 将当前目录映射到容器中的/app目录
     depends_on:
       - mongo
     environment:
-      MONGO_URI: mongodb://mongo:27017/mydatabase
+      MONGO_URI: mongodb://localhost:27017/mydatabase
     command: npm run start:prod
 
   mongo:
     image: mongo
     ports:
       - '27017:27017'
-    volumes:
-      - mongodb_data:/data/db
-
-volumes:
-  mongodb_data:
+    environment:
+      - MONGODB_DATABASE="mydatabase"
